@@ -1,0 +1,97 @@
+-------- Initial Prompt --------------------------
+
+Role: You are a Senior Product Engineer specializing in React Native and UX Design.
+
+Goal: Build a "delightful" mobile-first, two-page application for reviewing tennis courts using React Native (Expo) and TypeScript.
+
+Tech Stack Requirements:
+
+Framework: React Native (via Expo Router or React Navigation).
+
+Language: TypeScript.
+
+Styling: StyleSheet or NativeWind (Tailwind) — keep it clean and performant.
+
+Icons: Lucide-React-Native or Ionicons.
+
+App Structure & Features:
+
+1. Data Model (Mock Data):
+
+Create a comprehensive mock data file (courts.ts) containing at least 5 tennis courts.
+
+Each court should have: id, name, address, rating (1-5 float), reviewCount, image (use high-quality Unsplash source URLs), amenities (array of strings like "Lights", "Clay", "Pro Shop"), and an array of reviews (user, comment, rating).
+
+2. Screen 1: The "Court Finder" (Home View)
+
+Layout: A beautiful, clean header welcoming the user.
+
+Search: A prominent, pill-shaped search bar at the top with a search icon. This must filter the list of courts in real-time by name or location.
+
+List: A scrollable list of "Court Cards".
+
+Card Design: Each card must be visually "delightful"—use rounded corners (borderRadius: 16), subtle shadows (elevation), and a high-quality background image. Display the name, a star icon with the rating, and the distance/address clearly.
+
+Interaction: Tapping a card navigates to the Detail View.
+
+3. Screen 2: The "Court Insight" (Detail View)
+
+Hero Section: A large header image of the court with a "Back" button overlay.
+
+Info Section: Display the court name, total rating, and a horizontal scroll of "chips" for amenities.
+
+Reviews Section: A list of existing user reviews.
+
+Action: A floating action button (FAB) or a clearly visible button to "Leave a Review".
+
+Review Logic: Clicking "Leave a Review" should open a simple form (Modal or inline). Users can input a rating and text. Upon submit, update the local state to reflect the new review immediately (optimistic UI).
+
+Design Philosophy ("Delight"):
+
+Use a color palette inspired by tennis (Deep Forest Green: #2C5F2D, Court Blue: #0066CC, Lime Accent: #CCFF00).
+
+Ensure touch targets are large (min 44px).
+
+Add subtle press animations (e.g., cards scale down slightly on press).
+
+Execution Steps:
+
+Initialize the project structure.
+
+Create the types and mock data.
+
+Implement the navigation.
+
+Build the screens with the "Delight" design principles.
+
+Ensure the "Add Review" functionality works in the local session.
+
+
+
+-------- Enhancement Prompt --------------------------
+
+Task: Scale Data & Implement Pagination
+
+We need to stress-test the UI with a larger dataset. Please update the app with the following changes:
+
+1. Data Generation (courts.ts):
+
+Refactor the mock data to export an array of 60 tennis courts.
+
+Smart Image Logic: Instead of manually pasting URLs, write a generation function:
+
+For the first 10 courts, use specific, high-quality Unsplash tennis URLs (so the initial view looks perfect).
+
+For the remaining 50 courts, use a placeholder image service (e.g., https://placehold.co/600x400/2C5F2D/FFFFFF?text=Court+${id}) or a generic local asset.
+
+Text Data: Programmatically generate names (e.g., "Downtown Courts #45") and random ratings (3.0 - 5.0) for the bulk items.
+
+2. UI & Performance:
+
+Update the Home Screen's FlatList.
+
+Pagination: Implement client-side pagination. Initially load only 10 items.
+
+Infinite Scroll: Use the onEndReached and onEndReachedThreshold props to automatically load the next batch of 10 courts as the user scrolls down.
+
+Add a small "Loading..." spinner in the ListFooterComponent when fetching the next page.
