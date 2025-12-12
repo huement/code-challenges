@@ -1,0 +1,63 @@
+/.phpunit.cache
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+/.fleet
+/.idea
+/.vscode
+app/.DS_Store
+.DS_Store
+*.DS_Store
+resources/js/._*
+resources/js/src/._*.js
+resources/js/src/**/._*.js
+.env.bak
+s.sh
+
+# Static exports
+/exports
+
+# Logs
+*.logs
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Large icon collections (generated content)
+/resources/svg/icons/
+
+# Compiled assets (generated content)
+/public/plugins
+/public/assets/plugins
+/public/fonts/*
+/public/build/*
+
+/bootstrap/cache/*
+
+/resources/views/temp/*
+
+# /templates/livewire
+/templates/livewire/vendor
+/templates/livewire/.env
+/templates/livewire/node_modules
+/templates/livewire/storage/**/*.php
+!/templates/livewire/storage/logs/.gitignore
+temp/*
+
+docs/build-log/RESEARCH_*.md
+
+screenshots/*
+build-debug.log
+
+_assets
