@@ -1,26 +1,91 @@
-# UI Code Challenge!
+<div align="center">
+  <img src="../main-logo.png" alt="Court Finder Logo" width="200"/>
+</div>
 
-This small assignment will help evaluate your front end development capabilities.  You will be evaluated on design choices (friction, scalability, etc), efficient and effective coding, and style.
+# Tennis Court Reviewer - React Native App
 
-## Challenge
+A delightful mobile-first application for reviewing tennis courts, built with React Native (Expo) and TypeScript.
 
-Create a mobile first, two page app for reviewing tennis courts.  A user should be able to see a display of courts, search for a specific court, select a court detail view, and leave a review.
+<div align="center">
+  <img src="../ios-main.png" alt="iOS App Preview" width="300"/>
+</div>
 
-## Rules
+## Features
 
-1. Pull this repo locally and work on your own branch
-2. Maximum time is 4 hours
-3. You will only be evaluated on how it looks on mobile device sizes
-4. No backend, all data will be mocked
-5. You do not need to write tests for this exercise given the time limit
-6. When you are done, submit a PR to this repo.
+- **Court Finder**: Browse and search through tennis courts
+- **Court Details**: View detailed information, amenities, and reviews
+- **Add Reviews**: Leave your own reviews with ratings and comments
+- **Beautiful UI**: Tennis-themed design with smooth animations
 
-## Hints 
+## Getting Started
 
-- Do not use frameworks outside of the JavaScript/Typescript ecosystem
-- Submissions using React Native are preferred but React, Next, or pure JavaScript are acceptable
-- Bonus points if you mock > 50 courts as this will let you show off your scalable design skills
-- You can use coding assistants, but include every prompt you used in your PR
-- Your job is to delight users
+### Prerequisites
 
-Good luck!
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI (installed globally or via npx)
+
+### Installation
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the Expo development server:
+```bash
+npm start
+```
+
+3. Run on your preferred platform:
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Scan QR code with Expo Go app on your device
+
+## Project Structure
+
+```
+frontend-challenge/
+├── app/                # Expo Router pages
+│   ├── _layout.tsx     # Root layout
+│   ├── index.tsx       # Home screen (Court Finder)
+│   └── [id].tsx        # Detail screen (Court Insight)
+├── data/               # Mock data
+│   └── courts.ts       # Court data with reviews
+├── types/              # TypeScript types
+│   └── index.ts        # Court and Review interfaces
+├── constants/          # App constants
+│   └── colors.ts       # Color palette
+└── package.json        # Dependencies
+```
+
+## Design
+
+- **Color Palette**: Deep Forest Green (#2C5F2D), Court Blue (#0066CC), Lime Accent (#CCFF00)
+- **Touch Targets**: Minimum 44px for accessibility
+- **Animations**: Smooth press animations on interactive elements
+
+## Tech Stack
+
+- React Native (Expo)
+- TypeScript
+- Expo Router (file-based routing)
+- Lucide React Native (icons)
+- React Native StyleSheet (styling)
+
+## How It Works
+
+The app uses **infinite scroll** pagination to efficiently handle large datasets (51+ courts). Here's how it works:
+
+1. **Initial Load**: Displays 10 courts on first load for optimal performance
+2. **Infinite Scroll**: Automatically loads the next 10 courts as the user scrolls near the bottom
+3. **Search**: Real-time filtering by court name or location
+4. **Optimistic UI**: Reviews are added immediately with local state updates
+5. **Client-Side Pagination**: All data is stored locally and paginated on the client side
+
+## Notes
+
+- All data is mocked locally (51+ tennis courts)
+- Reviews are stored in component state (optimistic UI updates)
+- Court images use local assets (first 9 courts) and placeholders (remaining courts)
+- App supports both iOS and Android platforms
